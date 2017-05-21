@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Canvas Test</title>
+	<style>
+		.slot {
+			position: relative;
+			background-color: red;
+			/*margin-top: 75px;*/
+			height: 420px;
+			width: 450px;
+			/*overflow-y: hidden;*/
+
+		}
+		.crop {
+			position: absolute;
+			margin-top: 50px;
+			height: 300px;
+			width: 450px;
+			background-color: green;
+			z-index: 99;
+			overflow-y: hidden;
+		}
+		#reel1 {
+			position: absolute;
+			top: -1425px;
+			left: 0px;
+			/*display: inline-block;*/
+			/*float: left;*/
+		}
+		#reel2 {
+			position: absolute;
+			top: -2625px;
+			left: 150px;
+			/*display: inline-block;*/
+			/*float: left;*/
+		}
+		#reel3 {
+			position: absolute;
+			top: -3825px;
+			left: 300px;
+			/*display: inline-block;*/
+			/*float: left;*/
+		}
+		.animate1 {
+			animation: slide1 linear 3s alternate forwards ;
+		}
+		@keyframes slide1 {
+		    0%   {top:-1425px;}
+		    42.85% {top:-75px;}
+		    100% {top:-75px;}
+		}
+		.animate2 {
+			animation: slide2 linear 3s alternate forwards ;
+		}
+		@keyframes slide2 {
+		    0%   {top:-2625px;}
+		    71.42%   {top:-75px;}
+		    100% {top:-75px;}
+		}
+		.animate3 {
+			animation: slide3 linear 3s alternate forwards ;
+		}
+		@keyframes slide3 {
+		    0%   {top:-3825px;}
+		    100% {top:-75px;}
+		}
+		#start {
+			float: right;
+		}
+
+	</style>
+</head>
+<body>
+<div class="slot">
+	<div class="crop">
+		<div id="reel1">
+			<div id="img1_1">sd</div>
+			<div id="img1_2">sd</div>
+			<div id="img1_3">sd</div>
+			<div id="img1_4">sd</div>
+			<div id="img1_5">sd</div>
+			<div id="img1_6">sd</div>
+			<div id="img1_7">sd</div>
+			<div id="img1_8">sd</div>
+			<div id="img1_9">sd</div>
+			<div id="img1_10">sd</div>
+			<div id="img1_11">sd</div>
+			<div id="img1_12">sd</div>
+		</div>
+		<div id="reel2">
+			<div id="img2_1">sd</div>
+			<div id="img2_2">sd</div>
+			<div id="img2_3">sd</div>
+			<div id="img2_4">sd</div>
+			<div id="img2_5">sd</div>
+			<div id="img2_6">sd</div>
+			<div id="img2_7">sd</div>
+			<div id="img2_8">sd</div>
+			<div id="img2_9">sd</div>
+			<div id="img2_10">sd</div>
+			<div id="img2_11">sd</div>
+			<div id="img2_12">sd</div>
+			<div id="img2_13">sd</div>
+			<div id="img2_14">sd</div>
+			<div id="img2_15">sd</div>
+			<div id="img2_16">sd</div>
+			<div id="img2_17">sd</div>
+			<div id="img2_18">sd</div>
+			<div id="img2_19">sd</div>
+			<div id="img2_20">sd</div>
+		</div>
+		<div id="reel3">
+			<div id="img3_1">sd</div>
+			<div id="img3_2">sd</div>
+			<div id="img3_3">sd</div>
+			<div id="img3_4">sd</div>
+			<div id="img3_5">sd</div>
+			<div id="img3_6">sd</div>
+			<div id="img3_7">sd</div>
+			<div id="img3_8">sd</div>
+			<div id="img3_9">sd</div>
+			<div id="img3_10">sd</div>
+			<div id="img3_11">sd</div>
+			<div id="img3_12">sd</div>
+			<div id="img3_13">sd</div>
+			<div id="img3_14">sd</div>
+			<div id="img3_15">sd</div>
+			<div id="img3_16">sd</div>
+			<div id="img3_17">sd</div>
+			<div id="img3_18">sd</div>
+			<div id="img3_19">sd</div>
+			<div id="img3_20">sd</div>
+			<div id="img3_21">sd</div>
+			<div id="img3_22">sd</div>
+			<div id="img3_23">sd</div>
+			<div id="img3_24">sd</div>
+			<div id="img3_25">sd</div>
+			<div id="img3_26">sd</div>
+			<div id="img3_27">sd</div>
+			<div id="img3_28">sd</div>
+		</div>
+	</div>
+</div><div class="clearfix"></div>
+
+<button id="start">Start</button><div class="clearfix"></div>
+
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+    	<div class="modal-content">
+			<img src="https://media.tenor.co/images/50060464d856f3c026ccbcec59228c99/tenor.gif" width="100%">
+    	</div>
+      
+    </div>
+</div>
+
+<script>
+	$('#start').click(function(){
+		$('#reel1').addClass('animate1');
+		$('#reel2').addClass('animate2');
+		$('#reel3').addClass('animate3');
+		setTimeout(function(){
+			$('#myModal').modal('show');
+			$('#reel1').removeClass('animate1');
+			$('#reel2').removeClass('animate2');
+			$('#reel3').removeClass('animate3');
+			setTimeout(function(){
+				$('#myModal').modal('hide');
+			},2000);
+			
+		},3500);
+	});
+
+	var img1 = 'https://image.freepik.com/free-icon/apple-logo_318-40184.jpg';
+	var img2 = 'https://www.raspberrypi.org/wp-content/uploads/2012/03/raspberry-pi-logo.png';
+	var img3 = 'https://assetsv2.fiverrcdn.com/assets/v2_globals/fiverr-logo-new-green-9e65bddddfd33dfcf7e06fc1e51a5bc5.png';
+	var img4 = 'https://netdna.webdesignerdepot.com/uploads/circular_logos/Accelrys.jpg';
+	var reel1 = [img1,img2,img3,img4,img1,img2,img3,img4,img1,img2,img3,img4];
+	var reel2 = [img1,img2,img3,img4,img1,img2,img3,img4,img1,img2,img3,img4,img1,img2,img3,img4,img1,img2,img3,img4];
+	var reel3 = [img1,img2,img3,img4,img1,img2,img3,img4,img1,img2,img3,img4,img1,img2,img3,img4,img1,img2,img3,img4,img1,img2,img3,img4,img1,img2,img3,img4];//28
+
+	// var img_arr = [];
+	// for (var i = 0; i < img.length; i++) {
+	// 	img_arr.push(img[i]);
+	// }
+	// console.log(img_arr);
+
+
+	for (var i = 0; i < reel1.length; i++) {
+		// console.log(reel1[i]);
+		var a = i+1;
+		document.getElementById("img1_"+a).innerHTML = "<img src='"+ reel1[i] +"' width='150' height='150' >";
+	}
+	for (var i = 0; i < reel2.length; i++) {
+		// console.log(img[i]);
+		var a = i+1;
+		document.getElementById("img2_"+a).innerHTML = "<img src='"+ reel2[i] +"' width='150' height='150' >";
+	}
+	for (var i = 0; i < reel3.length; i++) {
+		// console.log(img[i]);
+		var a = i+1;
+		document.getElementById("img3_"+a).innerHTML = "<img src='"+ reel3[i] +"' width='150' height='150' >";
+	}
+	// var position1 = (reel1.length-2)*150;
+	// console.log(position1);
+	// document.getElementById('reel1').style.top = '-'+position1+'px';
+	// var position2 = (reel2.length-2)*150+32;
+	// console.log(position2);
+	// document.getElementById('reel2').style.top = '-'+position2+'px';
+	// var position3 = (reel3.length-2)*150+64;
+	// console.log(position3);
+	// document.getElementById('reel3').style.top = '-'+position3+'px';
+</script>
+
+</body>
+</html>
